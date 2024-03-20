@@ -13,7 +13,7 @@ export default function RaccoonDetail() {
     <div className="raccoon-detail-container">
       {raccoon ? (
         <div className="raccoon-detail">
-          <img src={raccoon.imageUrl} />
+          <img src={raccoon.imageUrl} width={880} height={870} />
           <i className={`raccoon-type ${raccoon.type} selected`}>
             {raccoon.type}
           </i>

@@ -12,7 +12,7 @@ export default function Raccoon() {
   const raccoonElements = raccoons.map((r) => (
     <div key={r.id} className="raccoon-title">
       <Link to={r.id}>
-        <img src={r.imageUrl} />
+        <img src={r.imageUrl} width={800} height={800} />
         <div className="racoon-info">
           <h3>{r.name}</h3>
           <p>

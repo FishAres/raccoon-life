@@ -13,7 +13,8 @@ createServer({
       description:
         "The Modest Explorer is a raccoon designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
       imageUrl:
-        "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
+        // "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
+        "../public/assets/raccoon_skylight.jpg",
       type: "simple",
     });
     server.create("raccoon", {
@@ -22,8 +23,7 @@ createServer({
       price: 80,
       description:
         "Beach Bum is a raccoon inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-      imageUrl:
-        "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
+      imageUrl: "../public/assets/raccoon_beachbum.jpg",
       type: "rugged",
     });
     server.create("raccoon", {

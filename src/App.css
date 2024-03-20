@@ -144,3 +144,139 @@ header a:hover {
   color: white;
   border-radius: 10px;
 }
+
+/*** RACCOON PAGES ***/
+.raccoon-list-container {
+  padding-inline: 23px;
+}
+
+.raccoon-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 34px;
+  margin-top: 57px;
+}
+
+.raccoon-tile a {
+  color: #161616;
+  text-decoration: none;
+}
+
+.raccoon-tile img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.raccoon-list-container button {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.raccoon-type {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffead0;
+  color: #4d4d4d;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.raccoon-type:hover {
+  color: #ffead0;
+}
+
+.raccoon-type:focus {
+  outline: none;
+}
+
+.raccoon-type.selected {
+  color: #ffead0;
+}
+
+.raccoon-type.simple:hover,
+.raccoon-type.simple.selected {
+  background-color: #e17654;
+}
+
+.raccoon-type.rugged:hover,
+.raccoon-type.rugged.selected {
+  background-color: #115e59;
+}
+
+.raccoon-type.luxury:hover,
+.raccoon-type.luxury.selected {
+  background-color: #161616;
+}
+
+.raccoon-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+i[class*="raccoon-type-"] {
+  padding: 7px 14px;
+}
+
+.raccoon-detail-container {
+  padding: 27px;
+}
+
+.raccoon-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+.raccoon-detail-container .back-button:visited {
+}
+
+.raccoon-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+.raccoon-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+}
+
+.raccoon-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+}
+
+.raccoon-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.raccoon-detail > i {
+  align-self: flex-start;
+}
+
+.raccoon-detail .raccoon-price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.raccoon-detail .raccoon-price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.raccoon-detail .link-button {
+  background-color: #ff8c38;
+  color: white;
+  font-size: 1.125rem;
+}

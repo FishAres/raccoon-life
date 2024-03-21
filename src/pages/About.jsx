@@ -5,7 +5,12 @@ import hero_img from "../../public/assets/about-hero.jpg";
 export default function About() {
   return (
     <div className="about-page-container">
-      <img src={hero_img} className="about-hero-image" />
+      <img
+        src={hero_img}
+        className="about-hero-image"
+        width={400}
+        height={400}
+      />
       <div className="about-page-content">
         <h1>No roadtrip is a boon without a raccoon</h1>
         <p>

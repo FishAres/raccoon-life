@@ -8,12 +8,13 @@ export default function RaccoonDetail() {
     fetch(`/api/raccoons/${params.id}`)
       .then((res) => res.json())
       .then((data) => setRaccoon(data.raccoons));
+    console.log(raccoon.imageUrl);
   }, [params.id]);
   return (
     <div className="raccoon-detail-container">
       {raccoon ? (
         <div className="raccoon-detail">
-          <img src={raccoon.imageUrl} width={880} height={870} />
+          <img src={`../public/${raccoon.imageUrl}`} width={400} height={400} />
           <i className={`raccoon-type ${raccoon.type} selected`}>
             {raccoon.type}
           </i>

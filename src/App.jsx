@@ -25,7 +25,7 @@ function App() {
           {/* Relative paths are implied if wrapped in
           a parent route */}
           <Route path="/host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
+            <Route path="" element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>

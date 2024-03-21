@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BetterLink from "./BetterLink";
 
 export default function Header() {
   return (
@@ -8,9 +9,9 @@ export default function Header() {
         #RACCOONLIFE
       </Link>
       <nav>
-        <Link to="/host">Host</Link>
-        <Link to="/about">About</Link>
-        <Link to="/raccoons">Raccoons</Link>
+        <BetterLink to="/host">Host</BetterLink>
+        <BetterLink to="/about">About</BetterLink>
+        <BetterLink to="/raccoons">Raccoons</BetterLink>
       </nav>
     </header>
   );

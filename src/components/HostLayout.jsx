@@ -1,13 +1,14 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import BetterLink from "./BetterLink";
 
 export default function HostLayout() {
   return (
     <>
       <nav className="host-nav">
-        <Link to="Dashboard">Dashboard</Link>
-        <Link to="Income">Income</Link>
-        <Link to="Reviews">Reviews</Link>
+        <BetterLink to="dashboard">Dashboard</BetterLink>
+        <BetterLink to="income">Income</BetterLink>
+        <BetterLink to="reviews"> Reviews</BetterLink>
       </nav>
       <Outlet />
     </>

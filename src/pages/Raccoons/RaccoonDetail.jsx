@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 
 export default function RaccoonDetail() {
   const params = useParams();
+  const location = useLocation();
   const [raccoon, setRaccoon] = React.useState(null);
   React.useEffect(() => {
     fetch(`/api/raccoons/${params.id}`)
@@ -13,8 +14,14 @@ export default function RaccoonDetail() {
   if (!raccoon) {
     return <h2>Loading...</h2>;
   }
+  const search = location.state?.search || "";
+  const type = location.state?.type || "our";
   return (
     <div className="raccoon-detail-container">
+      <Link to={`..${search}`} relative="path" className="back-button">
+        {/* relative=path specifies it's relative to the path and not the app route hierarchy */}
+        &larr; <span> Back to {type} raccoons</span>
+      </Link>
       <div className="raccoon-detail">
         <img src={raccoon.imageUrl} width={400} height={400} />
         <i className={`raccoon-type ${raccoon.type} selected`}>

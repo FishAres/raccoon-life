@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Raccoons from "./pages/Raccoons";
-import RaccoonDetail from "./pages/RaccoonDetail";
+import Login from "./pages/Login";
+import Raccoons from "./pages/Raccoons/Raccoons";
+import RaccoonDetail from "./pages/Raccoons/RaccoonDetail";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
@@ -15,7 +16,7 @@ import HostLayout from "./components/HostLayout";
 import HostRaccoonDesc from "./components/HostRaccoonDesc";
 import HostRaccoonPhotos from "./components/HostRaccoonPhotos";
 import HostRaccoonPrice from "./components/HostRaccoonPrice";
-
+import Page404 from "./pages/404";
 import "./server";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="raccoons" element={<Raccoons />} />
           <Route path="raccoons/:id" element={<RaccoonDetail />} />
+          <Route path="login" element={<Login />} />
           {/* Relative paths are implied if wrapped in
           a parent route */}
           <Route path="/host" element={<HostLayout />}>
@@ -40,6 +42,7 @@ function App() {
             </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
     </BrowserRouter>

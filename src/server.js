@@ -79,6 +79,8 @@ createServer({
     this.logging = false;
 
     this.get("/raccoons", (schema, request) => {
+      // return new Response(400, {}, { error: "Error fetching data" });
+
       return schema.raccoons.all();
     });
 

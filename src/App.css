@@ -14,9 +14,13 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-body {
+/* body, */
+.body-div {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -44,6 +48,11 @@ header a {
 header a:hover {
   color: #161616;
   text-decoration: underline;
+}
+
+.footer-pad {
+  flex: 1 0 auto;
+  padding-bottom: 80px;
 }
 
 footer {
@@ -78,6 +87,17 @@ footer {
 
 .link-button:hover {
   transform: translate(1px, 1px);
+}
+
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-left: 26px;
+  margin-bottom: 26px;
+  & span:hover {
+    text-decoration: underline;
+  }
 }
 
 /*** HOME PAGE ***/
@@ -177,14 +197,15 @@ footer {
   margin-top: 57px;
 }
 
-.raccoon-tile a {
-  color: #161616;
-  text-decoration: none;
-}
-
-.raccoon-tile img {
-  max-width: 100%;
-  border-radius: 5px;
+.raccoon-tile {
+  & a {
+    color: #161616;
+    text-decoration: none;
+  }
+  & img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
 }
 
 .raccoon-list-container button {
@@ -244,6 +265,14 @@ footer {
   color: #4d4d4d;
 }
 
+.raccoon-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  & a {
+    margin-right: 15px;
+  }
+}
+
 i[class*="raccoon-type-"] {
   padding: 7px 14px;
 }
@@ -268,20 +297,18 @@ i[class*="raccoon-type-"] {
   display: flex;
   flex-direction: column;
   color: #161616;
-}
-
-.raccoon-detail img {
-  border-radius: 5px;
-  margin-block: 47px;
-}
-
-.raccoon-detail h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.raccoon-detail > i {
-  align-self: flex-start;
+  /* margin-bottom: 20px; */
+  & img {
+    border-radius: 5px;
+    margin-block: 47px;
+  }
+  & h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  & i {
+    align-self: flex-start;
+  }
 }
 
 .raccoon-detail .raccoon-price {
@@ -305,10 +332,66 @@ i[class*="raccoon-type-"] {
   color: #4d4d4d;
   font-weight: 500;
   padding: 5px 20px;
+  &:hover {
+    color: #161616;
+    text-decoration: underline;
+    font-weight: 600;
+  }
 }
 
-.host-nav a:hover {
-  color: #161616;
-  text-decoration: underline;
+.host-raccoon-info {
+  & h3 {
+    margin-top: 24px;
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  & h4 {
+    font-size: 20px;
+    margin-block: 0;
+  }
+}
+
+.host-raccoon-detail {
+  display: flex;
+  align-items: center;
+  & img {
+    /* height: 160px; */
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+}
+
+.host-raccoon-detail-container {
+  background-color: white;
+  padding: 24px;
+  margin: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+
+.host-raccoon-nav {
+  margin-top: 10px;
+  & a {
+    text-decoration: none;
+    color: #4d4d4d;
+    font-weight: 500;
+    padding: 5px 20px;
+
+    &:hover {
+      color: #ff8c38;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  }
+}
+
+.host-raccoon-detail-info > h4 {
   font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  & span {
+    font-weight: 400;
+  }
 }

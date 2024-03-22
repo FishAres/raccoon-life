@@ -9,7 +9,12 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
+import HostRaccoons from "./pages/Host/HostRaccoons";
+import HostRaccoonDetail from "./pages/Host/HostRaccoonDetail";
 import HostLayout from "./components/HostLayout";
+import HostRaccoonDesc from "./components/HostRaccoonDesc";
+import HostRaccoonPhotos from "./components/HostRaccoonPhotos";
+import HostRaccoonPrice from "./components/HostRaccoonPrice";
 
 import "./server";
 
@@ -17,16 +22,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="raccoons" element={<Raccoons />} />
           <Route path="raccoons/:id" element={<RaccoonDetail />} />
           {/* Relative paths are implied if wrapped in
           a parent route */}
           <Route path="/host" element={<HostLayout />}>
-            <Route path="" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
+            <Route path="raccoons" element={<HostRaccoons />} />
+            <Route path="raccoons/:id" element={<HostRaccoonDetail />}>
+              <Route index element={<HostRaccoonDesc />} />
+              <Route path="pricing" element={<HostRaccoonPrice />} />
+              <Route path="photos" element={<HostRaccoonPhotos />} />
+            </Route>
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>

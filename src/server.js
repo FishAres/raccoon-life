@@ -13,9 +13,9 @@ createServer({
       description:
         "The Modest Explorer is a raccoon designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
       imageUrl:
-        // "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
-        "./assets/raccoon_skylight.jpg",
+        "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
       type: "simple",
+      hostId: "123",
     });
     server.create("raccoon", {
       id: "2",
@@ -23,8 +23,10 @@ createServer({
       price: 80,
       description:
         "Beach Bum is a raccoon inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-      imageUrl: "./assets/raccoon_beachbum.jpg",
+      imageUrl:
+        "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
       type: "rugged",
+      hostId: "123",
     });
     server.create("raccoon", {
       id: "3",
@@ -35,6 +37,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
       type: "luxury",
+      hostId: "456",
     });
     server.create("raccoon", {
       id: "4",
@@ -45,6 +48,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
       type: "simple",
+      hostId: "789",
     });
     server.create("raccoon", {
       id: "5",
@@ -55,6 +59,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
       type: "luxury",
+      hostId: "789",
     });
     server.create("raccoon", {
       id: "6",
@@ -65,11 +70,13 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
       type: "rugged",
+      hostId: "123",
     });
   },
 
   routes() {
     this.namespace = "api";
+    this.logging = false;
 
     this.get("/raccoons", (schema, request) => {
       return schema.raccoons.all();
@@ -78,6 +85,18 @@ createServer({
     this.get("/raccoons/:id", (schema, request) => {
       const id = request.params.id;
       return schema.raccoons.find(id);
+    });
+
+    this.get("/host/raccoons", (schema, request) => {
+      // Hard-code the hostId for now
+      return schema.raccoons.where({ hostId: "123" });
+    });
+
+    this.get("/host/raccoons/:id", (schema, request) => {
+      // Hard-code the hostId for now
+      const id = request.params.id;
+      // .where returns an array -> use findBy instead
+      return schema.raccoons.findBy({ id, hostId: "123" });
     });
   },
 });
